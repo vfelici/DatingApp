@@ -1,0 +1,15 @@
+<div class="form-group">
+    <input [class.is-invalid] = "ngControl.invalid && ngControl.touched"
+        type={{type}} 
+        class="form-control" 
+        [formControl] = "ngControl.control"
+        placeholder={{label}}>
+    <div *ngIf="ngControl.control.errors?.required" 
+        class="invalid-feedback">Specificare il campo {{label}}</div>
+    <div *ngIf="ngControl.control.errors?.minlength" 
+        class="invalid-feedback">Il campo {{label}} deve essere di almeno {{ngControl.control.errors?.minlength['requiredLength']}} caratteri</div>
+    <div *ngIf="ngControl.control.errors?.maxlength" 
+        class="invalid-feedback">Il campo {{label}} non deve superare {{ngControl.control.errors?.maxlength['requiredLength']}} caratteri</div>
+    <div *ngIf="ngControl.control.errors?.isMatching" 
+        class="invalid-feedback">Le Password non corrispondono</div>
+</div>
