@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from './_models/user';
 import { AccountService } from './_services/account.service';
@@ -12,7 +11,9 @@ export class AppComponent implements OnInit {
   title = 'The Dating App';
   users: any;
 
-  constructor(private accountService: AccountService) {}
+  constructor(private accountService: AccountService) {
+  }
+
   ngOnInit() {
     this.setCurrentUser();
   }
