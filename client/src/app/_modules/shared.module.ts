@@ -11,6 +11,7 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { TimeagoModule } from 'ngx-timeago';
 import { TimeagoIntl, TimeagoFormatter, TimeagoCustomFormatter } from 'ngx-timeago';
 import {strings as englishStrings} from 'ngx-timeago/language-strings/it';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [],
@@ -26,7 +27,8 @@ import {strings as englishStrings} from 'ngx-timeago/language-strings/it';
     ButtonsModule.forRoot(),
     TimeagoModule.forRoot({
       intl: { provide: TimeagoIntl },
-      formatter: { provide: TimeagoFormatter, useClass: TimeagoCustomFormatter },})
+      formatter: { provide: TimeagoFormatter, useClass: TimeagoCustomFormatter },}),
+    ModalModule.forRoot()
   ],
   exports: [
     BsDropdownModule,
@@ -37,7 +39,8 @@ import {strings as englishStrings} from 'ngx-timeago/language-strings/it';
     BsDatepickerModule,
     PaginationModule,
     ButtonsModule,
-    TimeagoModule
+    TimeagoModule,
+    ModalModule
   ]
 })
 export class SharedModule { 
